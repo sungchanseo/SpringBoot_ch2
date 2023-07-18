@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 //1. 원격프로그램으로 먼저 등록 -> @Controller 어노테이션 추가
 //2. URL과 메소드를 연결 -> @RequestMapping
-@RestController
-public class HelloController { //원격프로그램
+@Controller
+public class HomeController { //원격프로그램
 
 
-    @RequestMapping("/hello")
+    @RequestMapping("/")
     public String main(){
         System.out.println("hello");
-        return "/yoil";
+        return "index"; // template/index.html 보통 메인페이지를 index.html로 한다.
     }
 }

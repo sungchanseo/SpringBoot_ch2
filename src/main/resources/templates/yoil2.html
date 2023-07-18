@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>YoilTeller</title>
+</head>
+<body>
+<h1 th:text="${year}년">2020년 1월 1일 수요일</h1>
+<!--
+여러 개의 값을 출력하려면 |로 묶어야 한다.
+값이 없어도 html이 깨지지 않는다. 반면 jsp같은 경우 깨질 수 있으므로 흉하다.
+빈 값이 채워질 때 내용이 하드코딩된 것을 대체하므로 jsp에 비해 view를 작성하기 쉽다.
+-->
+</body>
+</html>
