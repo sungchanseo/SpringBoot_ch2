@@ -11,6 +11,17 @@
     }
 </style>
 <body>
+<h1 th:text="|year : ${year}|"></h1>
+<h1 th:text="|id : ${session.id}|"></h1>
+<h1 th:text="|email : ${application.email}|"></h1>
+
+<h2 th:text="|year : ${#request.getAttribute('year')}|"></h2>
+<h2 th:text="|id : ${#session.getAttribute('id')}|"></h2>
+<h2 th:text="|email : ${#servletContext.getAttribute('email')}|"></h2>
+
+
+
+
 <h1 th:text="${lastName}">lastName</h1>
 <h1>[[${firstName}]]</h1>
 
@@ -40,5 +51,12 @@
 </th:block>
 
 <a href="board.html" th:href="@{/board/list(bno=${bno}, type='L')}"></a>
+
+<script th:inline="javascript">
+    var firstName = [[${firstName}]]
+    var lastName= /*[[${lastName}]]*/ "testName"
+    var arr = [[${list}]]
+    var userObj = [[${user}]]
+</script>
 </body>
 </html>
