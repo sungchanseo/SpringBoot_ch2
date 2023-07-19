@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    select{
+        width:80px;
+        height:100px;
+    }
+</style>
+<body>
+<h1 th:text="${lastName}">lastName</h1>
+<h1>[[${firstName}]]</h1>
+
+
+
+<span th:text="${'<i>SEO, SUNGCHAN</i>'}"></span>
+<span th:utext="${'<i>SEO, SUNGCHAN</i>'}"></span>
+
+<h1 th:text="'My name is'+${lastName}+', '+${firstName}"></h1>
+<h1 th:text="|My name is ${lastName}, ${firstName}|"></h1>
+
+<table border="1px">
+    <tr th:each="item : ${list}">
+        <td th:text="${item}"></td>
+    </tr>
+    <tr th:unless="${list.size}==0">
+        <td>게시물이 없읍니다.</td>
+    </tr>
+</table>
+
+<select name="" id="" multiple>
+    <option th:each="opt:${list}" th:value="${opt}">[[${opt}]]}</option>
+</select>
+
+<th:block th:each="opt : ${list}">
+    <input type="checkbox" th:value="${opt}">[[${opt}]]><br>
+</th:block>
+
+<a href="board.html" th:href="@{/board/list(bno=${bno}, type='L')}"></a>
+</body>
+</html>

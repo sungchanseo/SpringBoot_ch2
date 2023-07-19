@@ -8,5 +8,6 @@
 </head>
 <div layout:fragment="content">
     <h1>환영합니다.</h1>
+    <h1 th:text="${#request.getAttribute('msg')}"></h1>
 </div>
 </html>
